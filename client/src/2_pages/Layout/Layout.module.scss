@@ -1,0 +1,17 @@
+.main {
+  background-color: rgb(176, 194, 209);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+ padding-bottom: 20px;
+}
+.container {
+  width: 150vh;
+  min-height: 50vh;
+  border: solid 5px rgb(232, 229, 229);
+  border-radius: 20px;
+  padding: 10px;
+}
