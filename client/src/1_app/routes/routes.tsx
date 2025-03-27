@@ -1,6 +1,8 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "../../2_pages/Layout/Layout";
-import AllTodos from "../../2_pages/Todos/Todos";
+import React, { Suspense } from "react";
+import Loader from "../../3_components/Loader/Loader";
+const AllTodos = React.lazy(() => import("../../2_pages/Todos/Todos"));
 
 const routes = createBrowserRouter([
   {
@@ -8,7 +10,14 @@ const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <Navigate to={"/todos"} replace /> },
-      { path: "/todos", element: <AllTodos /> },
+      {
+        path: "/todos",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <AllTodos />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);

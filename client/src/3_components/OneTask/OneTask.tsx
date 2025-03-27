@@ -2,7 +2,8 @@ import React from "react";
 import style from "./OneTask.module.scss";
 import { Checkbox, IconButton } from "@mui/material";
 import { Delete } from "@mui/icons-material";
-import useTaskStor, { TaskList } from "../../1_app/store/zustand";
+import useTaskStor from "../../1_app/store/zustand";
+import { TaskList } from "../../5_types/types";
 
 interface TaskProps {
   task: TaskList;

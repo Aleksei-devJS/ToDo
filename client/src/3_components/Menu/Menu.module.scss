@@ -1,15 +1,22 @@
 .menu {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px;
 }
 
 .menu_left {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .menu_right {
   display: flex;
   gap: 10px;
+}
+
+.word {
+  color: rgb(146, 143, 143);
+  font-weight: 600;
 }
