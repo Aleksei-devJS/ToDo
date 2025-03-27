@@ -9,5 +9,6 @@ export default defineConfig({
     outDir: "docs",
     assetsDir: "assets",
     emptyOutDir: true,
+    cssCodeSplit: false,
   },
 });
