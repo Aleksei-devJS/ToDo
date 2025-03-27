@@ -62,10 +62,7 @@ const useTaskStore = create(
       storage: {
         getItem: (name) => {
           const str = sessionStorage.getItem(name);
-          console.log(str);
-
           if (!str) return null;
-          console.log(JSON.parse(str));
           return JSON.parse(str);
         },
         setItem: (name, value) =>
