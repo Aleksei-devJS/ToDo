@@ -4,4 +4,4 @@
 1. Прописать в client: npm i 
 2. Запустить приложение: npm run start
 
-стек: React + TypeScript + Zustand + Scss
+# стек: Vite + React + TypeScript + Zustand + Scss
