@@ -2,13 +2,13 @@ import { Button, InputBase } from "@mui/material";
 import React, { useRef, useState } from "react";
 import style from "./Input.module.scss";
 import { Add } from "@mui/icons-material";
-import useTaskStor from "../../1_app/store/zustand";
+import useTaskStore from "../../1_app/store/zustand";
 
 function Input(): React.JSX.Element {
   const [text, setText] = useState<string>("");
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const addTask = useTaskStor((state) => state.addTask);
+  const addTask = useTaskStore((state) => state.addTask);
 
   const createNewTask = (): void => {
     const clearText = text.trim();

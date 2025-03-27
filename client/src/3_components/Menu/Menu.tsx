@@ -2,12 +2,12 @@ import { Button } from "@mui/material";
 import React, { useMemo, useState } from "react";
 import style from "./Menu.module.scss";
 import { Delete } from "@mui/icons-material";
-import useTaskStor from "../../1_app/store/zustand";
+import useTaskStore from "../../1_app/store/zustand";
 
 function Menu(): React.JSX.Element {
-  const { setFilter, clearDone } = useTaskStor((state) => state);
+  const { setFilter, clearDone } = useTaskStore((state) => state);
   const [word, setWord] = useState("задач");
-  const tasks = useTaskStor((state) => state.tasks);
+  const tasks = useTaskStore((state) => state.tasks);
 
   const lengthTask = useMemo((): number => {
     const result = tasks.filter((task) => task.status !== "done").length;

@@ -2,13 +2,12 @@ import React, { useMemo } from "react";
 import OneTask from "../OneTask/OneTask";
 import style from "./AllTasks.module.scss";
 import Menu from "../Menu/Menu";
-import useTaskStor from "../../1_app/store/zustand";
-
+import useTaskStore from "../../1_app/store/zustand";
 import { TaskList } from "../../5_types/types";
 
 function AllTasks(): React.JSX.Element {
-  const tasks = useTaskStor((state) => state.tasks);
-  const filter = useTaskStor((state) => state.filter);
+  const tasks = useTaskStore((state) => state.tasks);
+  const filter = useTaskStore((state) => state.filter);
 
   const actualTask = useMemo<TaskList[]>(() => {
     return filter === "all"

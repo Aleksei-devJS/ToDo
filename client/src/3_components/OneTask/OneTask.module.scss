@@ -20,5 +20,16 @@
 }
 
 .title {
+  transition: all 0.3s ease;
+
   width: 100%;
+
+  &--done {
+    color: gray;
+    text-decoration: line-through;
+  }
+
+  &--active {
+    color: black;
+  }
 }
