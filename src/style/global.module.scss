@@ -20,14 +20,7 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  font-family: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 13px;
   line-height: 1.5;
-}
-
-/* Фикс для MUI в production */
-.MuiButton-root {
-  font-family: "Nunito" !important;
-  font-size: 0.8125rem !important; /* 13px */
-  min-width: unset !important;
 }
