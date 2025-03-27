@@ -9,6 +9,12 @@ export default defineConfig({
     outDir: "docs",
     assetsDir: "assets",
     emptyOutDir: true,
-    cssCodeSplit: false,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: "assets/[name]-[hash][extname]",
+        entryFileNames: "assets/[name]-[hash].js",
+      },
+    },
   },
 });
