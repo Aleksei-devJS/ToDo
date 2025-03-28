@@ -10,6 +10,7 @@ export default function Layout(): React.JSX.Element {
       <div>
         <Header />
       </div>
+
       <div className={style.container}>
         <Outlet />
       </div>
