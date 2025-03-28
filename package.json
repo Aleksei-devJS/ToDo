@@ -6,7 +6,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build && echo 'Проверка dist:' && ls -la dist",
-    "postbuild": "echo 'Postbuild проверка:' && ls -la $(pwd)/dist || echo 'Dist не найден'",
+    "postbuild": "ls -la dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
