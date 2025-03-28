@@ -4,9 +4,8 @@ import react from "@vitejs/plugin-react-swc";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/ToDo/",
   build: {
-    outDir: "docs",
+    outDir: "dist",
     assetsDir: "assets",
     emptyOutDir: true,
     cssCodeSplit: true,
