@@ -31,8 +31,8 @@ function OneTask({ task }: TaskProps): React.JSX.Element {
       >
         {task.title}
       </span>
-      <IconButton onClick={() => openModal(task)}>
-        <Delete />
+      <IconButton size="small" onClick={() => openModal(task)}>
+        <Delete sx={{ width: "18px", height: "auto" }} />
       </IconButton>
     </div>
   );

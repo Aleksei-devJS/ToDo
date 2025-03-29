@@ -4,3 +4,5 @@ export interface TaskList {
   status: "active" | "done";
 }
 export type TaskFilter = TaskList["status"] | "all";
+
+export type BtnStyle = "contained" | "text";

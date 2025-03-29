@@ -6,7 +6,7 @@ interface TaskState {
   tasks: TaskList[];
   filter: TaskFilter;
   addTask: (text: string) => void;
-  deleteTask: (id: string) => void;
+  deleteTask: (id?: string) => void;
   changeStatus: (id: string) => void;
   setFilter: (status: TaskFilter) => void;
   clearDone: () => void;
@@ -16,7 +16,8 @@ interface ModalState {
   alertShow: boolean;
   infoTask: TaskList | null | string;
   open: boolean;
-  openAlert: () => void;
+  textAlert: string | null;
+  openAlert: (text: string) => void;
   closeAlert: () => void;
   setOpen: (data: TaskList) => void;
   setOpenAll: (marker: string) => void;
@@ -40,9 +41,12 @@ const useTaskStore = create(
 
       // удаление
       deleteTask: (id) =>
-        set((state) => ({
-          tasks: state.tasks.filter((task) => task.id !== id),
-        })),
+        set((state) => {
+          if (!id) {
+            return { tasks: [] };
+          }
+          return { tasks: state.tasks.filter((task) => task.id !== id) };
+        }),
 
       // отметка выполнено
       changeStatus: (id) =>
@@ -88,9 +92,10 @@ export const useModal = create<ModalState>((set) => ({
   open: false,
   infoTask: null,
   alertShow: false,
+  textAlert: null,
 
-  openAlert: () => set({ alertShow: true }),
-  closeAlert: () => set({ alertShow: false }),
+  openAlert: (text) => set({ alertShow: true, textAlert: text }),
+  closeAlert: () => set({ alertShow: false, textAlert: null }),
   setOpen: (data: TaskList) =>
     set(() => ({
       open: true,

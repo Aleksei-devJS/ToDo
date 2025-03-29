@@ -34,6 +34,8 @@ function Input(): React.JSX.Element {
     <div className={style.addForm}>
       <div className={style.input_costom}>
         <InputBase
+          size="small"
+          sx={{ fontSize: "13px" }}
           inputProps={{ ref: inputRef }}
           type="text"
           value={text}
@@ -50,6 +52,7 @@ function Input(): React.JSX.Element {
         color="inherit"
         variant="outlined"
         size="small"
+        sx={{ fontSize: "11px" }}
         endIcon={<Add />}
       >
         Добавить задачу

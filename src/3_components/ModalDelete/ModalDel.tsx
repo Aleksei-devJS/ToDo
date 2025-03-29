@@ -15,8 +15,12 @@ function ModalDel(): React.JSX.Element {
         deleteTask(infoTask.id);
         setClose();
       }
-      if (infoTask === "all") {
+      if (infoTask === "done") {
         clearDone();
+        setClose();
+      }
+      if (infoTask === "active") {
+        deleteTask();
         setClose();
       }
     } catch {

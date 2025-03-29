@@ -1,4 +1,4 @@
-import { TaskList } from "../5_types/types";
+import { TaskFilter, TaskList } from "../5_types/types";
 
 export function lengthTasks(
   tasks: TaskList[],
@@ -20,10 +20,10 @@ export function lengthTasks(
   return result;
 }
 
-export function controlClearDone(tasks: TaskList[]): boolean {
-  const result = tasks.filter((task) => task.status === "done");
-  if (result.length) {
-    return true;
-  }
-  return false;
+export function controlClearDone(
+  tasks: TaskList[],
+  status: TaskFilter
+): boolean {
+  const result = tasks.filter((tasks) => tasks.status === status);
+  return result.length > 0;
 }

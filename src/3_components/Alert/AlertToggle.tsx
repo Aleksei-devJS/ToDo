@@ -5,6 +5,7 @@ import { useModal } from "../../1_app/store/zustand";
 function AlertToggle(): React.JSX.Element {
   const alertShow = useModal((state) => state.alertShow);
   const closeAlert = useModal((state) => state.closeAlert);
+  const alertText = useModal((state) => state.textAlert);
 
   return (
     <Snackbar
@@ -13,13 +14,12 @@ function AlertToggle(): React.JSX.Element {
       onClose={closeAlert}
       autoHideDuration={2000}
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      message="Выполненных задач нету"
       slotProps={{
         transition: { direction: "left" },
       }}
     >
       <Alert variant="filled" severity="warning">
-        {"Выполненных задач нету"}
+        {`${alertText} нету`}
       </Alert>
     </Snackbar>
   );
