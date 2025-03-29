@@ -22,8 +22,14 @@ export function lengthTasks(
 
 export function controlClearDone(
   tasks: TaskList[],
-  status: TaskFilter
+  status: TaskFilter | TaskFilter[]
 ): boolean {
+  if (Array.isArray(status)) {
+    const result = tasks.filter(
+      (tasks) => tasks.status === status[0] || tasks.status === status[1]
+    );
+    return result.length > 0;
+  }
   const result = tasks.filter((tasks) => tasks.status === status);
   return result.length > 0;
 }

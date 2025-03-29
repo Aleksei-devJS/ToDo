@@ -30,18 +30,17 @@ function ModalDel(): React.JSX.Element {
 
   return (
     <div>
-      <Dialog
-        open={open}
-        onClose={setClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">
+      <Dialog open={open} onClose={setClose}>
+        <DialogTitle sx={{ fontSize: "13px" }}>
           {"Вы уверены что хотите выполнить удаление?"}
         </DialogTitle>
         <DialogActions>
-          <Button onClick={setClose}>Вернуться</Button>
+          <Button sx={{ fontSize: "11px" }} size="small" onClick={setClose}>
+            {"Вернуться"}
+          </Button>
           <Button
+            sx={{ fontSize: "11px" }}
+            size="small"
             variant="outlined"
             color="error"
             onClick={() => deleteHandler()}

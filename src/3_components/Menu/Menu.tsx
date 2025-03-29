@@ -64,7 +64,7 @@ function Menu(): React.JSX.Element {
           <Select size="small" variant="outlined" label="Удалить задачи">
             <MenuItem
               onClick={() =>
-                controlClearDone(tasks, "active")
+                controlClearDone(tasks, ["active", "done"])
                   ? openModal("active")
                   : openAlert("Задач")
               }
