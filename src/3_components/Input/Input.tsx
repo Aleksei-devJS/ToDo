@@ -35,7 +35,7 @@ function Input(): React.JSX.Element {
       <div className={style.input_costom}>
         <InputBase
           size="small"
-          sx={{ fontSize: "13px" }}
+          sx={{ fontSize: "13px", margin: "0px", paddingTop: "5px" }}
           inputProps={{ ref: inputRef }}
           type="text"
           value={text}
