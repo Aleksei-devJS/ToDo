@@ -12,6 +12,17 @@ interface TaskState {
   clearDone: () => void;
 }
 
+interface ModalState {
+  alertShow: boolean;
+  infoTask: TaskList | null | string;
+  open: boolean;
+  openAlert: () => void;
+  closeAlert: () => void;
+  setOpen: (data: TaskList) => void;
+  setOpenAll: (marker: string) => void;
+  setClose: () => void;
+}
+
 const useTaskStore = create(
   persist<TaskState>(
     (set) => ({
@@ -72,5 +83,32 @@ const useTaskStore = create(
     }
   )
 );
+
+export const useModal = create<ModalState>((set) => ({
+  open: false,
+  infoTask: null,
+  alertShow: false,
+
+  openAlert: () => set({ alertShow: true }),
+  closeAlert: () => set({ alertShow: false }),
+  setOpen: (data: TaskList) =>
+    set(() => ({
+      open: true,
+      infoTask: data,
+    })),
+
+  setOpenAll: (marker) =>
+    set({
+      open: true,
+      infoTask: marker,
+    }),
+
+  setClose: () => {
+    set(() => ({
+      open: false,
+      infoTask: null,
+    }));
+  },
+}));
 
 export default useTaskStore;

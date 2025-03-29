@@ -2,7 +2,7 @@ import React from "react";
 import style from "./OneTask.module.scss";
 import { Checkbox, IconButton } from "@mui/material";
 import { Delete } from "@mui/icons-material";
-import useTaskStore from "../../1_app/store/zustand";
+import useTaskStore, { useModal } from "../../1_app/store/zustand";
 import { TaskList } from "../../5_types/types";
 
 interface TaskProps {
@@ -10,7 +10,8 @@ interface TaskProps {
 }
 
 function OneTask({ task }: TaskProps): React.JSX.Element {
-  const { deleteTask, changeStatus } = useTaskStore((state) => state);
+  const changeStatus = useTaskStore((state) => state.changeStatus);
+  const openModal = useModal((state) => state.setOpen);
 
   const checkClick = (): void => {
     changeStatus(task.id);
@@ -30,7 +31,7 @@ function OneTask({ task }: TaskProps): React.JSX.Element {
       >
         {task.title}
       </span>
-      <IconButton onClick={() => deleteTask(task.id)}>
+      <IconButton onClick={() => openModal(task)}>
         <Delete />
       </IconButton>
     </div>

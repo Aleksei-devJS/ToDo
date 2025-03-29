@@ -2,29 +2,20 @@ import { Button } from "@mui/material";
 import React, { useMemo, useState } from "react";
 import style from "./Menu.module.scss";
 import { Delete } from "@mui/icons-material";
-import useTaskStore from "../../1_app/store/zustand";
+import useTaskStore, { useModal } from "../../1_app/store/zustand";
+import { controlClearDone, lengthTasks } from "../../4_utils/lengthTasks";
 
 function Menu(): React.JSX.Element {
-  const { setFilter, clearDone } = useTaskStore((state) => state);
+  const setFilter = useTaskStore((state) => state.setFilter);
   const [word, setWord] = useState("задач");
   const tasks = useTaskStore((state) => state.tasks);
+  const openModal = useModal((state) => state.setOpenAll);
+  const openAlert = useModal((state) => state.openAlert);
 
-  const lengthTask = useMemo((): number => {
-    const result = tasks.filter((task) => task.status !== "done").length;
-    switch (result) {
-      case 1:
-        setWord("задача");
-        break;
-      case 2:
-      case 3:
-      case 4:
-        setWord("задачи");
-        break;
-      default:
-        setWord("задач");
-    }
-    return result;
-  }, [tasks]);
+  const lengthTask = useMemo(
+    (): number => lengthTasks(tasks, setWord),
+    [tasks]
+  );
 
   return (
     <div className={style.menu}>
@@ -50,7 +41,9 @@ function Menu(): React.JSX.Element {
           variant="outlined"
           color="inherit"
           endIcon={<Delete />}
-          onClick={() => clearDone()}
+          onClick={() => {
+            controlClearDone(tasks) ? openModal("all") : openAlert();
+          }}
         >
           Очистить выполненные
         </Button>
