@@ -2,12 +2,27 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  gap: 5px;
+  padding: 15px;
   border-radius: 10px;
+  min-height: 6vh;
   background-color: rgb(255, 255, 255);
 }
 
 .menu {
+  margin-top: 10px;
+  padding: 0 10px;
   width: 100%;
+}
+
+.list {
+  margin-top: 10px;
+  padding: 0px 10px;
+  max-height: 44vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+
+  &:active {
+    overscroll-behavior-y: auto;
+  }
 }

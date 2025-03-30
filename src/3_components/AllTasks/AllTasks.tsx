@@ -20,9 +20,11 @@ function AllTasks(): React.JSX.Element {
       <div className={style.menu}>
         <Menu />
       </div>
-      {actualTask.map((task) => (
-        <OneTask key={task.id} task={task} />
-      ))}
+      <div className={style.list}>
+        {actualTask.map((task) => (
+          <OneTask key={task.id} task={task} />
+        ))}
+      </div>
     </div>
   );
 }

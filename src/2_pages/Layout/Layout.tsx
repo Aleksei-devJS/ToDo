@@ -7,17 +7,17 @@ import AlertToggle from "../../3_components/Alert/AlertToggle";
 
 export default function Layout(): React.JSX.Element {
   return (
-    <div className={style.main}>
+    <div className={style.layout}>
       <AlertToggle />
-      <div>
+      <header>
         <Header />
-      </div>
-      <div className={style.container}>
+      </header>
+      <main>
         <Outlet />
-      </div>
-      <div className={style.footer}>
+      </main>
+      <footer className={style.footer}>
         <Footer />
-      </div>
+      </footer>
     </div>
   );
 }

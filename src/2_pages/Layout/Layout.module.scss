@@ -1,33 +1,37 @@
-.main {
-  background-color: rgb(176, 194, 209);
+$base-color_fone: rgb(176, 194, 209);
+
+.layout {
+  background-color: $base-color_fone;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   position: relative;
-  font-size: 1rem;
-}
-.container {
-  width: 75%;
-  min-height: 50vh;
-  border: solid 5px rgb(232, 229, 229);
-  border-radius: 20px;
-  padding: 20px;
-  font-size: 13px;
-}
+  box-sizing: border-box;
+  font-family: "Nunito", monospace;
 
-.footer {
-  flex-shrink: 0;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background: inherit;
-  width: 100%;
-  position: absolute;
-  bottom: 10px;
-  padding-bottom: 5px;
+  main {
+    flex: 1;
+    width: 75%;
+    max-height: 72vh;
+    border: solid 5px rgb(232, 229, 229);
+    border-radius: 20px;
+    padding: 15px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .footer {
+    font-size: 13px;
+    padding-top: 2px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: inherit;
+    width: 100%;
+  }
 }
