@@ -8,25 +8,22 @@ $base-color_fone: rgb(176, 194, 209);
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10px;
   position: relative;
   box-sizing: border-box;
   font-family: "Nunito", monospace;
 
   main {
     flex: 1;
-    width: 75%;
-    max-height: 72vh;
+    max-width: 950px; // Добавьте максимальную ширину
     border: solid 5px rgb(232, 229, 229);
     border-radius: 20px;
-    padding: 15px;
+    padding: 10px;
     font-size: 13px;
-    margin-bottom: 10px;
   }
 
   .footer {
     font-size: 13px;
-    padding-top: 2px;
+    padding: 10px 0;
     flex-shrink: 0;
     display: flex;
     justify-content: center;

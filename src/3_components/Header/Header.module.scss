@@ -1,4 +1,9 @@
 .title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 110px;
   font-size: 90px;
   padding: 5px 0 5px;
   color: rgba(200, 71, 92, 0.88);
