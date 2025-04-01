@@ -7,9 +7,7 @@ export default function Todos(): React.JSX.Element {
   return (
     <div className={style.container}>
       <Input />
-      <div style={{ width: "80%" }}>
-        <AllTasks />
-      </div>
+      <AllTasks />
     </div>
   );
 }
