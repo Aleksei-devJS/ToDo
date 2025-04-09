@@ -5,6 +5,7 @@ import Menu from "../Menu/Menu";
 import useTaskStore from "../../1_app/store/zustand";
 import { TaskList } from "../../5_types/types";
 
+
 function AllTasks(): React.JSX.Element {
   const tasks = useTaskStore((state) => state.tasks);
   const filter = useTaskStore((state) => state.filter);
