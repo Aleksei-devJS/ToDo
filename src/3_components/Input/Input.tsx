@@ -35,7 +35,7 @@ function Input(): React.JSX.Element {
       <div className={style.input_costom}>
         <InputBase
           size="small"
-          sx={{ fontSize: "13px", margin: "0px", paddingTop: "5px" }}
+          sx={{ fontSize: "1em", paddingTop: "5px" }}
           inputProps={{ ref: inputRef }}
           type="text"
           value={text}
@@ -47,16 +47,18 @@ function Input(): React.JSX.Element {
           placeholder="Напиши задачу..."
         />
       </div>
-      <Button
-        onClick={() => createNewTask()}
-        color="inherit"
-        variant="outlined"
-        size="small"
-        sx={{ fontSize: "11px" }}
-        endIcon={<Add />}
-      >
-        Добавить задачу
-      </Button>
+      <div className={style.btn}>
+        <Button
+          onClick={() => createNewTask()}
+          color="inherit"
+          variant="outlined"
+          size="small"
+          sx={{ fontSize: "1em", borderRadius: "10px", height: "100%" }}
+          endIcon={<Add />}
+        >
+          Добавить задачу
+        </Button>
+      </div>
     </div>
   );
 }

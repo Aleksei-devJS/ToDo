@@ -1,10 +1,11 @@
 import { Telegram } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import React from "react";
+import style from './Footer.module.scss'
 
 function Footer(): React.JSX.Element {
   return (
-    <footer>
+    <div className={style.info}>
       {"мой tg: "}
 
       <IconButton
@@ -17,7 +18,7 @@ function Footer(): React.JSX.Element {
       >
         <Telegram fontSize="small" color="primary" />
       </IconButton>
-    </footer>
+    </div>
   );
 }
 

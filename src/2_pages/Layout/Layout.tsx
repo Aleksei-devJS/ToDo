@@ -17,7 +17,7 @@ export default function Layout(): React.JSX.Element {
       <main>
         <Outlet />
       </main>
-      <footer className={style.footer}>
+      <footer>
         <Footer />
       </footer>
     </div>

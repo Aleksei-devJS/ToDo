@@ -29,13 +29,15 @@ function Menu(): React.JSX.Element {
     setButtonStyle(type);
   };
 
+  const inlineStyle = { fontSize: "11px", padding: "5px" };
+
   return (
     <div className={style.menu}>
       <div className={style.menu_left}>
         <span className={style.word}>{`${lengthTask} ${word}`}</span>
         <Button
           variant={buttonStyle === "all" ? "contained" : "text"}
-          sx={{ fontSize: "11px", padding: "5px" }}
+          sx={inlineStyle}
           color="inherit"
           onClick={() => removeStyleBtn("all")}
         >
@@ -43,7 +45,7 @@ function Menu(): React.JSX.Element {
         </Button>
         <Button
           variant={buttonStyle === "done" ? "contained" : "text"}
-          sx={{ fontSize: "11px", padding: "5px" }}
+          sx={inlineStyle}
           color="inherit"
           onClick={() => removeStyleBtn("done")}
         >
@@ -51,7 +53,7 @@ function Menu(): React.JSX.Element {
         </Button>
         <Button
           variant={buttonStyle === "active" ? "contained" : "text"}
-          sx={{ fontSize: "11px", padding: "5px" }}
+          sx={inlineStyle}
           color="inherit"
           onClick={() => removeStyleBtn("active")}
         >
@@ -59,7 +61,7 @@ function Menu(): React.JSX.Element {
         </Button>
       </div>
       <div className={style.menu_right}>
-        <FormControl fullWidth sx={{ minWidth: "150px" }} size="small">
+        <FormControl fullWidth size="small">
           <InputLabel sx={{ fontSize: "13px" }}>{"Удалить задачи"}</InputLabel>
           <Select size="small" variant="outlined" label="Удалить задачи">
             <MenuItem
