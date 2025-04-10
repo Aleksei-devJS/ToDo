@@ -1,6 +1,6 @@
 import { Alert, Slide, Snackbar } from "@mui/material";
 import React from "react";
-import { useModal } from "../../1_app/store/zustand";
+import { useModal } from "../../app/store/zustand";
 
 function AlertToggle(): React.JSX.Element {
   const alertShow = useModal((state) => state.alertShow);

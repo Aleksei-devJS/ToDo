@@ -3,7 +3,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Button } from "@mui/material";
-import useTaskStore, { useModal } from "../../1_app/store/zustand";
+import useTaskStore, { useModal } from "../../app/store/zustand";
 
 function ModalDel(): React.JSX.Element {
   const { infoTask, open, setClose } = useModal((state) => state);

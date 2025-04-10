@@ -1,4 +1,4 @@
-import { TaskFilter, TaskList } from "../5_types/types";
+import { TaskFilter, TaskList } from "../types/types";
 
 export function lengthTasks(
   tasks: TaskList[],

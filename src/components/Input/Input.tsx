@@ -2,7 +2,7 @@ import { Button, InputBase } from "@mui/material";
 import React, { useRef, useState } from "react";
 import style from "./Input.module.scss";
 import { Add } from "@mui/icons-material";
-import useTaskStore from "../../1_app/store/zustand";
+import useTaskStore from "../../app/store/zustand";
 
 function Input(): React.JSX.Element {
   const [text, setText] = useState<string>("");

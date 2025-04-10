@@ -7,9 +7,9 @@ import {
 } from "@mui/material";
 import React, { useMemo, useState } from "react";
 import style from "./Menu.module.scss";
-import useTaskStore, { useModal } from "../../1_app/store/zustand";
-import { controlClearDone, lengthTasks } from "../../4_utils/functions";
-import { TaskFilter } from "../../5_types/types";
+import useTaskStore, { useModal } from "../../app/store/zustand";
+import { controlClearDone, lengthTasks } from "../../utils/functions";
+import { TaskFilter } from "../../types/types";
 
 function Menu(): React.JSX.Element {
   const setFilter = useTaskStore((state) => state.setFilter);

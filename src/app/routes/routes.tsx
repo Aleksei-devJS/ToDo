@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Layout from "../../2_pages/Layout/Layout";
+import Layout from "../../pages/Layout/Layout";
 import React, { Suspense } from "react";
-import Loader from "../../3_components/Loader/Loader";
-const Todos = React.lazy(() => import("../../2_pages/Todos/Todos"));
+import Loader from "../../components/Loader/Loader";
+const Todos = React.lazy(() => import("../../pages/Todos/Todos"));
 
 const routes = createBrowserRouter([
   {

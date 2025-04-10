@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { TaskFilter, TaskList } from "../../5_types/types";
+import { TaskFilter, TaskList } from "../../types/types";
 import { persist } from "zustand/middleware";
 
 interface TaskState {
