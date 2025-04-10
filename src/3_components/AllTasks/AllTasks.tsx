@@ -17,7 +17,7 @@ function AllTasks(): React.JSX.Element {
   }, [tasks, filter]);
 
   return (
-    <div className={style.task_list}>
+    <div className={style.menu_with_task_list}>
       <div className={style.menu}>
         <Menu />
       </div>
