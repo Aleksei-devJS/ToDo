@@ -10,6 +10,7 @@ import style from "./Menu.module.scss";
 import useTaskStore, { useModal } from "../../app/store/zustand";
 import { controlClearDone, lengthTasks } from "../../utils/functions";
 import { TaskFilter } from "../../types/types";
+import { DeleteSweepOutlined } from "@mui/icons-material";
 
 function Menu(): React.JSX.Element {
   const setFilter = useTaskStore((state) => state.setFilter);
@@ -29,31 +30,29 @@ function Menu(): React.JSX.Element {
     setButtonStyle(type);
   };
 
-  const inlineStyle = { fontSize: "11px", padding: "5px" };
-
   return (
     <div className={style.menu}>
       <div className={style.menu_left}>
         <span className={style.word}>{`${lengthTask} ${word}`}</span>
         <Button
+          className={style.btnMenu}
           variant={buttonStyle === "all" ? "contained" : "text"}
-          sx={inlineStyle}
           color="inherit"
           onClick={() => removeStyleBtn("all")}
         >
           Все
         </Button>
         <Button
+          className={style.btnMenu}
           variant={buttonStyle === "done" ? "contained" : "text"}
-          sx={inlineStyle}
           color="inherit"
           onClick={() => removeStyleBtn("done")}
         >
           Выполненные
         </Button>
         <Button
+          className={style.btnMenu}
           variant={buttonStyle === "active" ? "contained" : "text"}
-          sx={inlineStyle}
           color="inherit"
           onClick={() => removeStyleBtn("active")}
         >
@@ -62,27 +61,30 @@ function Menu(): React.JSX.Element {
       </div>
       <div className={style.menu_right}>
         <FormControl fullWidth size="small">
-          <InputLabel sx={{ fontSize: "13px" }}>{"Удалить задачи"}</InputLabel>
+          <InputLabel className={style.selectText}>Удалить задачи</InputLabel>
+          <InputLabel className={style.selectCrash}>
+            <DeleteSweepOutlined />
+          </InputLabel>
           <Select size="small" variant="outlined" label="Удалить задачи">
             <MenuItem
+              className={style.item}
               onClick={() =>
                 controlClearDone(tasks, ["active", "done"])
                   ? openModal("active")
                   : openAlert("Задач")
               }
-              sx={{ fontSize: "13px" }}
             >
-              {"Удалить все "}
+              {"Удалить все"}
             </MenuItem>
             <MenuItem
+              className={style.item}
               onClick={() =>
                 controlClearDone(tasks, "done")
                   ? openModal("done")
                   : openAlert("Выполненных задач")
               }
-              sx={{ fontSize: "13px" }}
             >
-              {"Удалить выполненные "}
+              {"Удалить выполненные"}
             </MenuItem>
           </Select>
         </FormControl>

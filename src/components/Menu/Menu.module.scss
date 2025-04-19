@@ -7,6 +7,7 @@
 .menu_left {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 15px;
   width: 100%;
 }
@@ -15,8 +16,53 @@
   width: 30%;
 }
 
+.btnMenu {
+  padding: 5px 10px;
+}
+
+.selectText {
+  display: block;
+}
+
+.selectCrash {
+  display: none;
+}
+
 .word {
   color: rgb(146, 143, 143);
   font-weight: 600;
   width: 60px;
+}
+
+.item {
+  font-size: 1rem;
+  padding: 5px;
+  min-height: 2rem;
+}
+
+@media (max-width: 950px) {
+  .selectText {
+    display: none;
+  }
+
+  .selectCrash {
+    display: block;
+  }
+  .word {
+    display: none;
+  }
+  .menu_left {
+    gap: 0.4rem;
+  }
+
+  .menu_right {
+    width: 25%;
+  }
+
+  .btnMenu {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0px 5px;
+    min-width: 3rem;
+  }
 }

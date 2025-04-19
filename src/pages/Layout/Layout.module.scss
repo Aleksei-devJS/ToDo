@@ -2,7 +2,7 @@ $base-color_fone: rgb(176, 194, 209);
 
 .layout {
   background-color: $base-color_fone;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: flex-start;
@@ -26,9 +26,17 @@ $base-color_fone: rgb(176, 194, 209);
     width: 70%;
     border: solid 5px rgb(232, 229, 229);
     border-radius: 1rem;
-    padding: 15px;
+    padding: 12px;
     box-sizing: border-box;
-    font-size: 13px;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 950px) {
+    main {
+      width: 95%;
+      padding: 0.6rem;
+      border: solid 3px rgb(232, 229, 229);
+    }
   }
 
   footer {

@@ -47,18 +47,26 @@ function Input(): React.JSX.Element {
           placeholder="Напиши задачу..."
         />
       </div>
-      <div className={style.btn}>
-        <Button
-          onClick={() => createNewTask()}
-          color="inherit"
-          variant="outlined"
-          size="small"
-          sx={{ fontSize: "1em", borderRadius: "10px", height: "100%" }}
-          endIcon={<Add />}
-        >
-          Добавить задачу
-        </Button>
-      </div>
+
+      <Button
+        className={style.btn}
+        onClick={() => createNewTask()}
+        color="inherit"
+        variant="outlined"
+        size="small"
+        endIcon={<Add />}
+      >
+        Добавить задачу
+      </Button>
+      <Button
+        className={style.btnMobile}
+        onClick={() => createNewTask()}
+        color="inherit"
+        variant="outlined"
+        size="small"
+      >
+        Добавить 
+      </Button>
     </div>
   );
 }

@@ -1,14 +1,15 @@
 @use "../../pages/Layout/Layout.module.scss" as layout;
 
 .task {
+  font-size: 1rem;
   box-sizing: border-box;
   width: 100%;
   flex-shrink: 0;
-  min-height: 50px;
+  min-height: 4rem;
   border: 1px solid rgba(128, 128, 128, 0.469);
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  margin: 10px 0;
+  margin-bottom: 9px;
   padding: 5px;
   display: flex;
   align-items: center;
@@ -38,6 +39,8 @@
 .title {
   transition: all 0.3s ease;
   width: 90%;
+  flex-grow: 1;
+  word-wrap: break-word;
 
   &--done {
     color: gray;
@@ -46,5 +49,15 @@
 
   &--active {
     color: black;
+  }
+}
+
+@media (max-width: 950px) {
+  .task {
+    min-height: 3rem;
+  }
+
+  .title {
+    width: 75%;
   }
 }
